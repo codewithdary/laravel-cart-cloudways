@@ -1,9 +1,35 @@
 ## Cache in Laravel
 
-The following documentation is based on my [Laravel 8 - Creating a shopping cart in Laravel 8]() tutorial where we will be creating a shopping cart in Laravel.. <br> <br>
+The following documentation is based on my [Laravel 8 - Creating a shopping cart in Laravel 8]() tutorial where we will be creating a shopping cart in Laravel. <br> <br>
 •	Author: [Code With Dary](https://github.com/codewithdary) <br>
 •	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
 •	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
+
+
+## Technical Requirements
+•	PHP => 7.2.5 <br>
+
+## Prerequisites
+•	Basic Laravel knowledge <br>
+•	Low level HTML & CSS/TailwindCSS knowledge <br>
+•	Object-Oriented Programming <br>
+
+## Course Overview
+
+| **Episode**   | **Subject** |
+| ------------- |-------------|
+| Ep. 1         | Introduction to this course |
+| Ep. 2         | Creating our GitHub repository + Laravel project |
+| Ep. 3         | Creating all Controllers, Models, Migrations & Routes |
+| Ep. 4         | Setting up our database & credentials |
+| Ep. 5         | Setting up our migrations & data structure |
+| Ep. 6         | Creating our database seeding |
+| Ep. 7         | Storing images & adding |
+| Ep. 8         | Building the frontend |
+| Ep. 9         | Making our shop dynamic |
+| Ep. 10        | Saving products to our session/cart |
+| Ep. 11        | Making our cart dynamic |
+| Ep. 12        | Deleting products from our session/cart |
 
 ## Usage <br>
 Setup your coding environment <br>
@@ -353,7 +379,7 @@ Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add
 
 The named route needs to be added inside the “add to cart” button from our ```/resources/views/shop/show.blade.php``` file.
 
-```html
+```php
 <a 
     href="{{ route('add.to.cart', $product->id) }}"
     class="px-10 py-6 text-l uppercase text-white font-bold bg-blue-600 rounded-full w-full" 
@@ -402,7 +428,7 @@ public function cart()
 
 With the information that we got inside our session, we should be able to print that data inside the shopping cart. There is a lot of ```HTML``` and ```CSS``` inside the ```/resources/views/cart/cart.blade.php``` file. Try to find the ```<tbody>```tag, since that’s one row that needs to be outputted dynamically.
 
-```html
+```php
 <tbody class="bg-white divide-y divide-gray-200">
 …
 </tbody>
