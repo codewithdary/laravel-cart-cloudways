@@ -9,7 +9,6 @@ class CartController extends Controller
 {
     public function cart()
     {
-        dd(session('cartItems'));
         return view('cart.cart');
     }
 
@@ -41,7 +40,7 @@ class CartController extends Controller
             $cartItems = session()->get('cartItems');
 
             if(isset($cartItems[$request->id])) {
-                unset($cartItems[$request->id]);
+                unset($cartItems[$request->id]); 
                 session()->put('cartItems', $cartItems);
             }
 
