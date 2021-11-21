@@ -1,4 +1,4 @@
-## Cache in Laravel
+## Shopping Cart in Laravel 
 
 The following documentation is based on my [Laravel 8 - Creating a shopping cart in Laravel 8]() tutorial where we will be creating a shopping cart in Laravel. <br> <br>
 •	Author: [Code With Dary](https://github.com/codewithdary) <br>
