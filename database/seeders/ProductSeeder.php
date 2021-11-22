@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder
                 'brand' => 'Apple',
                 'price' => 2499,
                 'shipping_cost' => 25,
-                'image_path' => 'storage/product.png'
+                'image_path' => 'storage/product1.png'
             ],
             [
                 'name' => 'Samsung Galaxy Book Pro',
