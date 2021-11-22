@@ -43,6 +43,21 @@ php artisan cache:clear && php artisan config:clear
 php artisan serve 
 ```
 
+# 1. Introduction to this course
+
+Working on a shopping cart in any type of programming language does require some kind of skip, and that applies for this course as well. We are going to work inside a Laravel 8 project, where we won’t be styling our pages, but we will be using a repository I have created before.
+
+There are multiple ways on how you can get in touch if you’re running into issues. I got to say that it’s difficult at times to maintain and respond to everyone, but I’ll definitely do my best.
+
+### Instagram
+My Instagram username is codewithdary as well, and next to coding issues, you’ll find more personal stuff about me over here.
+
+### YouTube
+If you are interested in learning more about coding, you can check me out on YouTube where you’ll can find me under the name of Code With Dary. I’m a developer and educator who created online courses in PHP, JavaScript, Laravel and TailwindCSS to help everyone out.
+
+### Patreon
+If you are interested in getting into my Discord group and interact with other up and coming developers (and me) about your coding issues, my Patreon will be the right place for you!
+
 ## 2. Creating our GitHub repository + Laravel project
 
 When you want to deploy a Laravel project into the cloud, you should be working with ```GitHub```. GitHub is an open source platform where all developers over the entire world contribute to source codes, and where you can control your software. 
