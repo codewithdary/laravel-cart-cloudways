@@ -30,6 +30,7 @@ The following documentation is based on my [Laravel 8 - Creating a shopping cart
 | Ep. 10        | Saving products to our session/cart |
 | Ep. 11        | Making our cart dynamic |
 | Ep. 12        | Deleting products from our session/cart |
+| Ep. 12        | Deleting products from our session/cart |
 
 ## Usage <br>
 Setup your coding environment <br>
