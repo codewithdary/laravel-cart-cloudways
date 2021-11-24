@@ -549,16 +549,16 @@ This still shouldn’t do the trick for us, because the form has no button so su
 
 ```html
 <select 
-name="quantity" 
-id="quantity" 
-value="{{ $value['quantity'] }}"
-onchange="this.form.submit()">
+    name="quantity" 
+    id="quantity" 
+    value="{{ $value['quantity'] }}"
+    onchange="this.form.submit()">
 ```
 
 This line of code tells our Request that the select has been submitted. If we test it out right now, we will be hit with a 404 since the route has not been defined.
 
 ```php
-Route::put('/update-from-cart/{id}', [CartController::class, 'update'])->name('update.from.cart');
+    Route::put('/update-from-cart/{id}', [CartController::class, 'update'])->name('update.from.cart');
 ```
 
 This allows us to play around with the request of our quantity inside the form. Quantity will refer to the name=”quantity” inside our select.
@@ -566,7 +566,7 @@ This allows us to play around with the request of our quantity inside the form. 
 ```php
 public function update(Request $request)
 {
-        dd($request->quantity);
+    dd($request->quantity);
 }
 ```
 
@@ -575,13 +575,12 @@ If you perform the code above, you will see that the quantity from the input fie
 ```php
 public function update(Request $request)
 {
-        if($request->id && $request->quantity){
-            $cartItems = session()->get('cartItems');
-            $cartItems[$request->id]["quantity"] = $request->quantity;
-            session()->put('cartItems', $cartItems);
+    if($request->id && $request->quantity){
+        $cartItems = session()->get('cartItems');
+        $cartItems[$request->id]["quantity"] = $request->quantity;
+        session()->put('cartItems', $cartItems);
 }
-
-        return redirect()->back()->with('success', 'Product added to cart!');
+    return redirect()->back()->with('success', 'Product added to cart!');
 }
 ```
 
@@ -589,7 +588,7 @@ The last step is adding the session quantity as the default value of our select.
 
 ```html
 <option value="{{ $i }}" {{ $value['quantity'] == $i ? 'selected' : ''}}>
-{{ $i }} 
+    {{ $i }} 
 </option>
 ```
 
