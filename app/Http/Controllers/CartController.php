@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function cart()
+    public function cart(Request $request)
     {
         return view('cart.cart');
     }
@@ -46,5 +46,16 @@ class CartController extends Controller
 
             return redirect()->back()->with('success', 'Product deleted successfully');
         }
+    }
+
+    public function update(Request $request)
+    {
+        if($request->id && $request->quantity){
+            $cartItems = session()->get('cartItems');
+            $cartItems[$request->id]["quantity"] = $request->quantity;
+            session()->put('cartItems', $cartItems);
+        }
+
+        return redirect()->back()->with('success', 'Product added to cart!');
     }
 }

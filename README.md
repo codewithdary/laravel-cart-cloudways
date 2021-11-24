@@ -523,3 +523,73 @@ To make the button work, we simply need to add the named route, into our delete 
     </a>
 </td>
 ```
+
+## 13. Updating the quantity
+
+When updating the quantity of the shopping cart, we will be performing a POST request which means that our select needs to be wrapped inside a form, that has a @csrf token below of it.
+
+```html
+<form action="{{ route('update.from.cart', $key) }}" method="POST">
+    @csrf
+    @method("PUT")
+    <select 
+        name="quantity" 
+        id="quantity" 
+        value="{{ $value['quantity'] }}">
+        @for ($i = 1; $i <= 10; $i++)
+            <option value="{{ $i }}">
+                {{ $i }}
+            </option>
+        @endfor
+    </select>
+</form>
+```
+
+This still shouldn’t do the trick for us, because the form has no button so submit the actual content of our select. This can simply be done by adding the onchange on our select, that is an event which will be called after text inside the <input type=”text”> or <textarea> had been selected.
+
+```html
+<select 
+name="quantity" 
+id="quantity" 
+value="{{ $value['quantity'] }}"
+onchange="this.form.submit()">
+```
+
+This line of code tells our Request that the select has been submitted. If we test it out right now, we will be hit with a 404 since the route has not been defined.
+
+```php
+Route::put('/update-from-cart/{id}', [CartController::class, 'update'])->name('update.from.cart');
+```
+
+This allows us to play around with the request of our quantity inside the form. Quantity will refer to the name=”quantity” inside our select.
+
+```php
+public function update(Request $request)
+{
+        dd($request->quantity);
+}
+```
+
+If you perform the code above, you will see that the quantity from the input field has been printed out. It’s time to update our cart right now, and redirect back to the same page.
+
+```php
+public function update(Request $request)
+{
+        if($request->id && $request->quantity){
+            $cartItems = session()->get('cartItems');
+            $cartItems[$request->id]["quantity"] = $request->quantity;
+            session()->put('cartItems', $cartItems);
+}
+
+        return redirect()->back()->with('success', 'Product added to cart!');
+}
+```
+
+The last step is adding the session quantity as the default value of our select. This can simply be done by adding the ternary operator to see if the quantity is equal to $i in the loop.
+
+```html
+<option value="{{ $i }}" {{ $value['quantity'] == $i ? 'selected' : ''}}>
+{{ $i }} 
+</option>
+```
+
