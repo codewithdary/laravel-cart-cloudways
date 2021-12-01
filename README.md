@@ -1,6 +1,6 @@
 ## Shopping Cart in Laravel 
 
-The following documentation is based on my [Laravel 8 - Creating a shopping cart in Laravel 8]() tutorial where we will be creating a shopping cart in Laravel. <br> <br>
+The following documentation is based on my [Laravel 8 - Creating a shopping cart in Laravel 8](https://www.udemy.com/course/laravel-8-build-a-shopping-cart-and-deploy-it-on-cloudways/) tutorial where we will be creating a shopping cart in Laravel. <br> <br>
 •	Author: [Code With Dary](https://github.com/codewithdary) <br>
 •	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
 •	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
@@ -30,7 +30,7 @@ The following documentation is based on my [Laravel 8 - Creating a shopping cart
 | Ep. 10        | Saving products to our session/cart |
 | Ep. 11        | Making our cart dynamic |
 | Ep. 12        | Deleting products from our session/cart |
-| Ep. 12        | Deleting products from our session/cart |
+| Ep. 13        | Updating the quantity |
 
 ## Usage <br>
 Setup your coding environment <br>
